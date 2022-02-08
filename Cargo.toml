@@ -7,3 +7,6 @@ edition = "2021"
 
 [dependencies]
 cpal = "0.13.5"
+
+[dependencies.flac-bound] 
+git = "https://github.com/awsomearvinder/flac-bound.git"

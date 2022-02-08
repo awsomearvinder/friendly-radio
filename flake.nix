@@ -12,7 +12,11 @@
     utils.lib.eachDefaultSystem (system:
       let pkgs = nixpkgs.legacyPackages."${system}";
       in let
-        compileDeps = [ (pkgs.lib.getDev pkgs.alsaLib) (pkgs.alsaPlugins)];
+        compileDeps = [
+          (pkgs.lib.getDev pkgs.alsaLib)
+          (pkgs.alsaPlugins)
+          (pkgs.lib.getDev pkgs.flac)
+        ];
         naerskOveride = naersk.lib.${system}.override {
           inherit (fenix.packages.${system}.stable) cargo rustc;
         };
